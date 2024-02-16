@@ -8,6 +8,7 @@ These Python scripts enable real-time video transmission over UDP. updtransmissi
 4. numpy
 5. time
 6. base64
+   
 **Instructions** to the user using the files for video Transmission:
 1. Edit the host_ip variables in both scripts to match the IP address of the transmitting device (server) and receiving device (client). You can find the IP addresses using ifconfig or ip addr commands.
 2. Run updtransmission.py first. The terminal should display "Listening at:" followed by the server's IP address and port.
