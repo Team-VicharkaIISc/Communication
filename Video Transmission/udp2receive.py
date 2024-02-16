@@ -9,7 +9,7 @@ BUFF_SIZE = 65536
 client_socket = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 client_socket.setsockopt(socket.SOL_SOCKET,socket.SO_RCVBUF,BUFF_SIZE)
 host_name = socket.gethostname()
-host_ip = '10.178.242.59'#  socket.gethostbyname(host_name)
+host_ip = '10.217.46.53'#  socket.gethostbyname(host_name)
 print(host_ip)
 port = 8080
 message = b'Hello'
@@ -22,6 +22,7 @@ while True:
 	npdata = np.fromstring(data,dtype=np.uint8)
 	frame = cv2.imdecode(npdata,1)
 	frame = cv2.putText(frame,'FPS: '+str(fps),(10,40),cv2.FONT_HERSHEY_SIMPLEX,0.7,(0,0,255),2)
+	frame =cv2.resize(frame, (1600, 900))
 	cv2.imshow("RECEIVING VIDEO",frame)
 	key = cv2.waitKey(1) & 0xFF
 	if key == ord('q'):
